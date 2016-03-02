@@ -39,7 +39,7 @@ public class UserMealsUtil {
                 .filter(new Predicate<UserMeal>() {
                     @Override
                     public boolean test(UserMeal userMeal) {
-                        if(userMeal.getDateTime().toLocalTime().isAfter(startTime) && userMeal.getDateTime().toLocalTime().isBefore(endTime)){
+                        if(TimeUtil.isBetween(userMeal.getDateTime().toLocalTime(),startTime,endTime)){
                             return true;
                         }
                         return false;
